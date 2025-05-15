@@ -8,10 +8,11 @@ import Modal from "../../UI/Modal/Modal.jsx";
 import Input from "../../UI/Input/Input.jsx";
 import useHttp from "../../hooks/Http/useHttp.js";
 import ErrorInfo from "../ErrorInfo/ErrorInfo.jsx";
-import Button from "../../UI/Button/Button.jsx"
+import Button from '../../UI/Button/Button.jsx';
+
+const urlPutOrder = 'https://app-portfolio-ba2d4-default-rtdb.europe-west1.firebasedatabase.app/app-food-order/order-checkout.json';
 
 export default function Checkout() {
-
     const { modalText, closeModal, showModal } = useContext(ModalContext);
     const { items, clearCart } = useContext(CartContext);
 
@@ -25,9 +26,9 @@ export default function Checkout() {
         const data = Object.fromEntries(formDataObj.entries());
 
         const resData = await sendRequest(
-            "http://localhost:3000/orders",
+            urlPutOrder,
             {
-                method: "POST",
+                method: "PUT",
                 headers: {
                     "Content-Type": "application/json"
                 },
