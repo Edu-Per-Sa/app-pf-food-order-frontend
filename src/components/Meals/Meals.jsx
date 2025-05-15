@@ -5,12 +5,15 @@ import Meal from "../Meal/Meal";
 import useHttp from "../../hooks/Http/useHttp";
 import ErrorInfo from "../ErrorInfo/ErrorInfo.jsx";
 
+const urlMeals = 'https://app-portfolio-ba2d4-default-rtdb.europe-west1.firebasedatabase.app/app-food-order/food-list.json';
+
+
 export default function Meals() {
 
   const { isFetching, data: meals, sendRequest, error } = useHttp([]);
 
   useEffect(() => {
-    sendRequest("http://localhost:3000/meals");
+    sendRequest(urlMeals);
   }, [])
 
 

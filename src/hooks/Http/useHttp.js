@@ -21,6 +21,7 @@ export default function useHttp(initialData) {
         setIsFetching(true);
         try {
             const resData = await sendHttp(url, config);
+            console.log("resData, useHttp --->", resData);
             setData(resData);
             setIsFetching(false);
             return resData;
