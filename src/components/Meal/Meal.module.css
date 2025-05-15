@@ -1,0 +1,44 @@
+.meal-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 350px;
+    max-width: 350px;
+    min-height: 600px;
+    background-color: #1d1a16;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 1rem;
+    padding-bottom: 1rem;
+}
+
+.meal-container * {
+    margin: 0px;
+}
+
+.meal-imagen {
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+}
+
+.meal-name {
+    font-size: 2rem;
+    color: #ffc404;
+}
+
+.meal-price {
+    background-color: #ffc40400;
+    font-weight: bold;
+    color: #ffc404;
+    padding: 5px 10px;
+    border: 1px solid #ffc404;
+    border-radius: .5rem;
+}
+
+.meal-description {
+    line-height: 1.5;
+    letter-spacing: 1.5px;
+    padding: .2rem .5rem;
+    text-align: center;
+}

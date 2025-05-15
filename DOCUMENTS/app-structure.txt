@@ -1,0 +1,70 @@
+
+
+        DO                  DOING                   DONE
+
+                                                    Cabecera
+                                                        Descripcion del negocio (Izquierda)
+                                                            Imagen
+                                                            Nombre
+                                                        Carrito de compra (Derecha)
+                                                            Cantidad de elementos en el carrito (Haciendo click se abre el carrito)
+
+
+                                                    Grilla de comida
+                                                        Tarjeta (elementos en bloque - centrados)
+                                                            Imagen
+                                                            Nombre
+                                                            precio
+                                                            Descripcion
+                                                            Boton agregar al carrito
+
+
+                                                    Crear un componente para el BOTON.
+
+                            
+                                                    Grilla - Funcionalidad boton de agregar
+
+                                                    Cabecera Carrito - Reflejar las cantidades de elementos agregados
+
+                                                    Carrito de compra (Pop Up desplegable - elementos en bloque)
+                                                        Titulo
+                                                        Lista de comidas
+                                                            Descripcion (Izquierda)
+                                                                Titulo de la comida - Cantidad - Xprecio(izquieda)
+                                                            Botones (Derecha - elementos en linea)
+                                                                Sumar
+                                                                Cantidad
+                                                                Restar
+                                                        Total
+                                                        Botones de accion (Derecha - elementos en linea)
+                                                            Cerrar
+                                                            Ir a pagar
+
+                                                            Pagar (elementos en bloque)
+                                                                Titulo
+                                                                Monto total
+                                                                Nombre completo
+                                                                Correo electronico
+                                                                Direccion
+                                                                Ubicacion
+                                                                    Codigo postal
+                                                                    Ciudad
+                                                                Botones de accion
+                                                                    Cerrar
+                                                                    Submit orden
+
+                                                    Aviso de Orden exitosa
+                                                        Titulo
+                                                        Textos
+                                                        Boton de OK y Cerrar
+
+
+Final Css
+
+Info App
+
+Conectar con un servidor (Firebase o similar)
+
+Publicar en portafolio y probar
+        
+

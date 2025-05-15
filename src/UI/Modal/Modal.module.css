@@ -1,0 +1,14 @@
+.modal-container {
+    border-radius: 6px;
+    padding: 0;
+    border: 5px solid rgb(175, 175, 175);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+    width: 80%;
+    max-width: 40rem;
+    animation: fade-slide-up 3s ease-out forward;
+}
+
+.modal-container::backdrop {
+    background-color: rgba(136, 136, 136, 0.712);
+}
+
