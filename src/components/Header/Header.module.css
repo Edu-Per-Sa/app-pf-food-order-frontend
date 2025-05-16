@@ -22,3 +22,15 @@
     border-radius: 50%;
     border: 2px solid #ffc404;
 }
+
+@media screen and (max-width:800px) {
+    .header-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem 2rem;
+    gap: 1rem;
+    width: 100%;
+    }
+    
+}
