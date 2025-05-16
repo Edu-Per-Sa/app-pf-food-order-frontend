@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { CartContext } from "../../store/cart-context.jsx";
-import { formattingPrice } from "../../util/fotmattingPrice.js";
 import styles from "./Header.module.css";
 import Button from "../../UI/Button/Button.jsx";
 import { ModalContext } from "../../store/modal-context.jsx";
@@ -19,6 +18,11 @@ export default function Header() {
             <div className={styles["app-info"]}>
                 <img src={"images/logo.jpg"} alt="Logo Food App" />
                 <h1> FOOD APP </h1>
+            </div>
+            <div>
+                <Button onClick={() => showModal("app-info")}>
+                    App Info
+                </Button>
             </div>
             <div>
                 <Button onlyText onClick={() => showModal("cart")}>

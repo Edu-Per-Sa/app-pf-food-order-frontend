@@ -1,3 +1,4 @@
+import AppInfo from "./components/AppInfo/AppInfo.jsx";
 import Cart from "./components/Cart/Cart.jsx";
 import Checkout from "./components/Checkout/Checkout.jsx";
 import Header from "./components/Header/Header.jsx";
@@ -17,6 +18,7 @@ function App() {
         <Cart />
         <Checkout/>
         <OrderSuccess/>
+        <AppInfo/>
       </CartContextProvider>
     </ModalContextProvider>
   );
