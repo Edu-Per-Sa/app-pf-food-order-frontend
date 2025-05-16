@@ -31,7 +31,6 @@ export default function Meals() {
     mealsInfo = meals.map(meal => <Meal key={meal.id} meal={meal} />);
   }
 
-
   return (
     <main className={styles["meals-container"]}>
       {mealsInfo}

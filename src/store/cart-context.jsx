@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import { setLocalStorage, getFromLocalStorage } from "../util/manageLocalStorage";
 
 export const CartContext = createContext({
     items: [],
@@ -9,7 +10,7 @@ export const CartContext = createContext({
 
 export default function CartContextProvider({ children }) {
 
-    const [items, setItems] = useState([]);
+    const [items, setItems] = useState(getFromLocalStorage("foodCartItems") ? getFromLocalStorage("foodCartItems") : [] );
 
     function addItem(meal) {
         setItems((prevItems) => {
@@ -34,7 +35,7 @@ export default function CartContextProvider({ children }) {
                     price: meal.price
                 })
             }
-
+            setLocalStorage("foodCartItems", [...newItems]);
             return [...newItems];
         })
     }
@@ -60,11 +61,13 @@ export default function CartContextProvider({ children }) {
                 newItems.splice(indexItem, 1);
             }
 
+            setLocalStorage("foodCartItems", [...newItems]);
             return [...newItems];
         })
     }
 
     function clearCart () {
+        setLocalStorage("foodCartItems", []);
         setItems([]);
     }
 

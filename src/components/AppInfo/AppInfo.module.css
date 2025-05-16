@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 2rem;
+}
+
+.button-lan {
+    align-self: flex-end;
+}
+.button-close {
+    align-self: center;
+}

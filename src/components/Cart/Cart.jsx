@@ -42,6 +42,7 @@ export default function Cart() {
         </ul>
     }
 
+
     return (
         <Modal openModal={modalText === "cart"} onClose={modalText === "cart" ? closeModal : null}>
             <div className={styles["cart-container"]}>
