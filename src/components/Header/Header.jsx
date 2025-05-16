@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { CartContext } from "../../store/cart-context.jsx";
 import { formattingPrice } from "../../util/fotmattingPrice.js";
 import styles from "./Header.module.css";
-// import logo from '';
 import Button from "../../UI/Button/Button.jsx";
 import { ModalContext } from "../../store/modal-context.jsx";
 
@@ -18,7 +17,7 @@ export default function Header() {
     return (
         <header className={styles["header-container"]}>
             <div className={styles["app-info"]}>
-                <img src={"../../../images/logo.jpg"} alt="Logo Food App" />
+                <img src={"images/logo.jpg"} alt="Logo Food App" />
                 <h1> FOOD APP </h1>
             </div>
             <div>
