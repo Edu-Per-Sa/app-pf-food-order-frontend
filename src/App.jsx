@@ -1,7 +1,8 @@
 import Cart from "./components/Cart/Cart.jsx";
 import Checkout from "./components/Checkout/Checkout.jsx";
-import Header from "./components/Header/Header";
-import Meals from "./components/Meals/Meals";
+import Header from "./components/Header/Header.jsx";
+import Meals from "./components/Meals/Meals.jsx";
+import OrderSuccess from "./components/OrderSuccess/OrderSuccess.jsx";
 
 import CartContextProvider from "./store/cart-context.jsx";
 import ModalContextProvider from "./store/modal-context.jsx";
@@ -15,6 +16,7 @@ function App() {
         <Meals />
         <Cart />
         <Checkout/>
+        <OrderSuccess/>
       </CartContextProvider>
     </ModalContextProvider>
   );

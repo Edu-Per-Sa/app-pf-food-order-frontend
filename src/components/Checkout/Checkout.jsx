@@ -1,4 +1,4 @@
-import { useContext, useRef, useState } from "react";
+import { useContext, useRef } from "react";
 import { createPortal } from "react-dom";
 import styles from "./Checkout.module.css";
 
@@ -14,11 +14,11 @@ const urlPutOrder = 'https://app-portfolio-ba2d4-default-rtdb.europe-west1.fireb
 
 export default function Checkout() {
     const { modalText, closeModal, showModal } = useContext(ModalContext);
-    const { items, clearCart } = useContext(CartContext);
+    const { items } = useContext(CartContext);
 
     const formRef = useRef();
 
-    const { sendRequest, error, data: respData, isFetching, clearDataRespopnse } = useHttp([]);
+    const { sendRequest, error, data: respData, isFetching } = useHttp([]);
 
     async function handleOrder(event) {
         event.preventDefault();
@@ -42,22 +42,10 @@ export default function Checkout() {
         );
 
         if (resData) {
+            closeModal();
+            showModal("order");
             formRef.current.reset();
         }
-    }
-
-    function handleOkOrder () {
-        clearDataRespopnse();
-        closeModal();
-        clearCart();
-    }
-
-    let actionsInfo = <>
-        <Button onlyText onClick={() => closeModal()}> CLOSE </Button>
-        <Button type="submit"> ORDER </Button>
-    </>
-    if (isFetching) {
-        actionsInfo = <p> Sending order...</p>
     }
 
     let errorInfo = ""
@@ -65,32 +53,30 @@ export default function Checkout() {
         errorInfo = <ErrorInfo title={"Error sending order"} message={error.message} />
     }
 
-    let infoModal = <form className={styles["form-container"]} ref={formRef} onSubmit={handleOrder}>
-        <Input label={"Name"} id={"name"} name={"name"} />
-        <Input type="email" label="E-Mail" id="email" name="email" />
-        <Input label="Street" id="street" name="street" />
-        <div className={styles["item-address"]}>
-            <Input type="text" label={"City"} id={"city"} name={"city"} />
-            <Input type="number" label={"Postal Code"} id={"postal-code"} name={"postal-code"} />
-        </div>
-        {errorInfo}
-        <div className={styles["item-actions"]}>
-            {actionsInfo}
-        </div>
-    </form>
-
-    if (!error && respData.message) {
-        infoModal = <div className={styles["form-container"]}>
-            <h2> Successful... </h2>
-            <p> {respData.message}</p>
-            <Button className={styles["ok-seccessful"]} onClick={handleOkOrder}> Ok </Button>
-        </div>
-    }
+    console.log("respData, Checkout ---> ", respData);
 
     return (
         createPortal(
             <Modal openModal={modalText === "checkout"} onClose={modalText === "checkout" ? closeModal : null}>
-                {infoModal}
+                <form className={styles["form-container"]} ref={formRef} onSubmit={handleOrder}>
+                    <Input label={"Name"} id={"name"} name={"name"} />
+                    <Input type="email" label="E-Mail" id="email" name="email" />
+                    <Input label="Street" id="street" name="street" />
+                    <div className={styles["item-address"]}>
+                        <Input type="text" label={"City"} id={"city"} name={"city"} />
+                        <Input type="number" label={"Postal Code"} id={"postal-code"} name={"postal-code"} />
+                    </div>
+                    {errorInfo}
+                    <div className={styles["item-actions"]}>
+                        {!isFetching &&
+                            <>
+                                <Button onlyText onClick={() => closeModal()}> CLOSE </Button>
+                                <Button type="submit"> ORDER </Button>
+                            </>
+                        }
+                        {isFetching && <p> Sending order...</p>}
+                    </div>
+                </form>
             </Modal>,
             document.getElementById("modal"))
     )
