@@ -53,8 +53,6 @@ export default function Checkout() {
         errorInfo = <ErrorInfo title={"Error sending order"} message={error.message} />
     }
 
-    console.log("respData, Checkout ---> ", respData);
-
     return (
         createPortal(
             <Modal openModal={modalText === "checkout"} onClose={modalText === "checkout" ? closeModal : null}>

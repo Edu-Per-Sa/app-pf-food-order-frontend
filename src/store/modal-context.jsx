@@ -12,7 +12,6 @@ export default function ModalContextProvider ({ children }) {
     const [modal, setModal] = useState("");
 
     function showModal(newModalText) {
-        console.log("newModalText, modal-context --->", newModalText)
         setModal(newModalText);
     }
 
